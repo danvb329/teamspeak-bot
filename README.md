@@ -53,7 +53,7 @@ and visit
 And you have the BOT working.
 
 
-## How do Deploy
+## How to Deploy
 deploy is even more easy.
 
 you just need to go under the  `.deploy` folder and fill out `mup.js` file [following this README](https://github.com/zodern/meteor-up) and fill out the `settings.json` inside `.deploy` folder with the data as needed.
