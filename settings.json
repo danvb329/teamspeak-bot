@@ -1,0 +1,25 @@
+{
+  "public": {
+
+  },
+  "teamspeak": {
+    "credentials": {
+      "client_login_name": "Netorox",
+      "client_login_password": "5vAdkqV6"
+    },
+    "queryServer": {
+      "server_address": "ca64.ts3.cloud",
+      "port": 10022,
+      "server_id": 643
+    },
+    "BOT_TOP_CHANNEL": "[cspacer]┏╋━━━━━━◥◣◆◢◤━━━━━━╋┓",
+    "BOT_MIDDLE_CHANNEL": "[cspacer] ◥◣◥◣【 Ethan BOT  】◥◣◥◣",
+    "BOT_BOTTOM_CHANNEL": "[cspacer]┗╋━━━━━━◥◣◆◢◤━━━━━━╋┛",
+    "ENEMY_CHANNELS_PARENT_NAME": "【« ❑ Enemys Channels  ❑»】",
+    "FRIENDS_CHANNELS_PARENT_NAME": "【« ❑ Friends Channels  ❑»】"
+  },
+  "worldGameData": {
+    "medivia": true,
+    "serverName": "Legacy"
+  }
+}

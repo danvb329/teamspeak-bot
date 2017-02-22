@@ -1,0 +1,2 @@
+mup setup --config=.deploy/mup.js --settings=.deploy/settings.json
+mup deploy --config=.deploy/mup.js --settings=.deploy/settings.json
