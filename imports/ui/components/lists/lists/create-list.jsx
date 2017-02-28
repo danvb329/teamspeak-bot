@@ -80,11 +80,11 @@ class CreateList extends React.Component {
           </div>
           <div className="pure-control-group">
             <CheckboxOrRadio
-              title="Enemy or Friend"
+              title="Enemy friend or Other"
               setName="enemys"
               type="checkbox"
               onChange={this.handleCheckBoxChange}
-              options={['enemys', 'friends']}
+              options={['enemys', 'friends', 'other']}
               selectedOptions={selectedListType}
             />
           </div>

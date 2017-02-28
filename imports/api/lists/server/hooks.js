@@ -12,13 +12,13 @@ ListsItems.before.insert((userId, doc) => {
 });
 
 Lists.before.insert((userId, doc) => {
-  const listTypeParent = MasterChannel.findOne({
-    type: doc.listType
-  });
+  const type = doc.listType;
+  const queryType = type === 'other' ? 'botDescription' : type;
+  const listTypeParent = MasterChannel.findOne({ type: queryType });
   createChannel({
+    cpid: listTypeParent.cid,
     channel_name: doc.listName,
     channel_flag_permanent: 1,
-    cpid: listTypeParent.cid
   }).then(({ cid }) =>  Lists.update(doc._id, { $set: { cid }}));
 });
 

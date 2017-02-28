@@ -2,7 +2,7 @@
   "name": "ts",
   "private": true,
   "scripts": {
-    "start": "meteor run --settings settings.json",
+    "start": "MONGO_URL=mongodb://admin:123456@ds157499.mlab.com:57499/tsbot meteor run --settings settings.json",
     "deploy": "bin/deploy"
   },
   "dependencies": {
