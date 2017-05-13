@@ -4,13 +4,13 @@
   },
   "teamspeak": {
     "credentials": {
-      "client_login_name": "Netorox",
-      "client_login_password": "5vAdkqV6"
+      "client_login_name": "BOTSAVIORS",
+      "client_login_password": "3J+RxqrN"
     },
     "queryServer": {
-      "server_address": "ca64.ts3.cloud",
-      "port": 10022,
-      "server_id": 643
+      "server_address": "mirror1.gamerlive.cl",
+      "port": 10011,
+      "server_id": 542
     },
     "BOT_TOP_CHANNEL": "[cspacer]┏╋━━━━━━◥◣◆◢◤━━━━━━╋┓",
     "BOT_MIDDLE_CHANNEL": "[cspacer] ◥◣◥◣【 Ethan BOT  】◥◣◥◣",

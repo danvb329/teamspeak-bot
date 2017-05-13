@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import Lists from '/imports/api/collections/lists';
 import { SyncedCron } from 'meteor/percolate:synced-cron';
 import ListsItems from '/imports/api/collections/list-items';
+import { updateBanner } from '/imports/api/teamspeak/global.js';
 import { findChannel, channelEdit, createChannel } from '/imports/api/teamspeak/channels';
 import { cronListsForMedivia, deathListCronMedivia } from '/imports/api/medivia/cron-data';
 import { LIST_ONLINE_CHANNEL_NAME } from '../constants';
@@ -27,6 +28,7 @@ SyncedCron.add({
             cid,
           });
           Lists.update({ _id: list._id }, {$set: { onlinePlayers }});
+          // updateBanner();
         } else {
           // run for ther parser
         }

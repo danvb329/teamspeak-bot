@@ -4,13 +4,13 @@
   },
   "teamspeak": {
     "credentials": {
-      "client_login_name": "YOUR_SERVER_QUERY_NAME",
-      "client_login_password": "YOU_SERVER_QUERY_PASSWORD"
+      "client_login_name": "Netorox",
+      "client_login_password": "5vAdkqV6"
     },
     "queryServer": {
-      "server_address": "TEAMSPEAK_SERVER",
-      "port": "TEAMSPEAK_SERVER_QUERY_PORT",
-      "server_id": "SERVER_ID"
+      "server_address": "ca64.ts3.cloud",
+      "port": 10022,
+      "server_id": 643
     },
     "BOT_TOP_CHANNEL": "[cspacer]┏╋━━━━━━◥◣◆◢◤━━━━━━╋┓",
     "BOT_MIDDLE_CHANNEL": "[cspacer] ◥◣◥◣【 Ethan BOT  】◥◣◥◣",
@@ -20,6 +20,6 @@
   },
   "worldGameData": {
     "medivia": true,
-    "serverName": "SERVER_YOU_PLAY"
+    "serverName": "Legacy"
   }
 }

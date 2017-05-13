@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 
 const TEAMSPEAK_SETTINGS = Meteor.settings.teamspeak;
 
+console.log(TEAMSPEAK_SETTINGS);
 const { server_address, port, server_id } = TEAMSPEAK_SETTINGS.queryServer;
 const { client_login_name, client_login_password } = TEAMSPEAK_SETTINGS.credentials;
 

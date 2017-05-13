@@ -22,3 +22,5 @@ percolate:synced-cron
 matb33:collection-hooks
 mquandalle:stylus
 matb33:bootstrap-glyphicons
+accounts-password
+accounts-base
