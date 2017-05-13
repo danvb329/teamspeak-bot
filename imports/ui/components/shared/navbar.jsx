@@ -26,12 +26,12 @@ class Navbar extends React.Component {
           </a>
         </div>
         <div className="nav-center">
-          <a className="nav-item" href="https://github.com/Ethaan/teamspeak-bot">
+          <a className="nav-item" target="_blank" href="https://github.com/Ethaan/teamspeak-bot">
             <span className="icon">
               <i className="fa fa-github"></i>
             </span>
           </a>
-          <a className="nav-item" href="https://twitter.com/EasyWithEthan">
+          <a className="nav-item" target="_blank" href="https://twitter.com/EasyWithEthan">
             <span className="icon">
               <i className="fa fa-twitter"></i>
             </span>
@@ -46,7 +46,7 @@ class Navbar extends React.Component {
           {
             authenticated ?
             <div className="nav-item">
-              <Link className="nav-item" to="">
+              <Link className="nav-item" to="clients">
                 Clients
               </Link>
               <a className="nav-item" onClick={this.logout}>

@@ -1,19 +1,34 @@
 import React from 'react';
 import { compose } from 'react-komposer';
+import { browserHistory } from 'react-router';
 import Footer from '/imports/ui/components/shared/Footer';
 import Loader from '/imports/ui/components/shared/Loader';
 import Navbar from '/imports/ui/components/shared/Navbar';
 import trackerComposer from '/imports/ui/composers/tracker';
 
-class MasterLayout extends React.Component {
-  constructor(props) {
-    super(props);
+const requireAuth = [
+  'clients',
+  '/clients',
+];
 
+class MasterLayout extends React.Component {
+  checkRedirect() {
+    const { user, location, loggingIn } = this.props;
+    const routePath = location.pathname;
+    const redirectIfNoAuth = requireAuth.indexOf(routePath) > -1;
+    if (!user && !loggingIn && redirectIfNoAuth) browserHistory.push('/');
   }
 
+  componentDidMount() {
+    this.checkRedirect();
+  }
+
+  componentWillUpdate() {
+    this.checkRedirect();
+  }
 
   render() {
-    const { user, children, masterChannelData } = this.props;
+    const { user, location, children, masterChannelData } = this.props;
     const childrenWithProps = React.cloneElement(children, {
       ...this.props,
     });
@@ -31,6 +46,7 @@ class MasterLayout extends React.Component {
 function mapper(props, onData) {
   onData(null, {
     user: Meteor.user(),
+    loggingIn: Meteor.loggingIn(),
   });
 };
 
