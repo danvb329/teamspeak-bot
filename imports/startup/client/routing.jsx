@@ -4,14 +4,12 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import MasterLayout from '/imports/ui/layouts/master-layout';
 
-const HomePage = () => (
-  <div>Hello</div>
-);
+import LandingPage from '/imports/ui/pages/LandingPage';
 
 const Routes = routes =>
   <Router history={browserHistory}>
     <Route path="/" component={MasterLayout} >
-      <IndexRoute component={HomePage}/>
+      <IndexRoute component={LandingPage}/>
    </Route>
   </Router>
 
