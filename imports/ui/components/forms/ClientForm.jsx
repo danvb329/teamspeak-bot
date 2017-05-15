@@ -40,11 +40,11 @@ class NewClientForm extends React.Component {
     // and we are re-using this form for update - create this control what data
     // we sent to the server
     const formData = change ? _.assign({}, {
-      hostname,
-      hostnamePort,
-      serverQueryPort,
-      tibiaServerToUse,
-      serverQueryHostname,
+      hostname: hostname || client.hostname,
+      hostnamePort: hostnamePort || client.hostnamePort,
+      serverQueryPort: serverQueryPort || client.serverQueryPort,
+      tibiaServerToUse: tibiaServerToUse || client.tibiaServerToUse,
+      serverQueryHostname: serverQueryHostname || client.serverQueryHostname,
     }) : client;
 
     return (
