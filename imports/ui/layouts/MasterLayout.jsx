@@ -8,7 +8,7 @@ import trackerComposer from '/imports/ui/composers/tracker';
 
 const requireAuth = [
   'clients',
-  '/clients',
+  '/client/new',
   'client',
 ];
 

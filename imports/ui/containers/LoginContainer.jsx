@@ -21,7 +21,7 @@ class RegisterContainer extends React.Component {
         Bert.alert(error.reason, 'danger', 'fixed-top', 'fa-frown-o');
       } else {
         Bert.alert('Welcome Back', 'success', 'fixed-top', 'fa-check');
-        browserHistory.push('/clients');
+        browserHistory.push('/client/new');
       }
     });
   }

@@ -10,6 +10,7 @@ import NewClientContainer from '/imports/ui/containers/NewClientContainer';
 import ClientPageContainer from '/imports/ui/containers/ClientPageContainer';
 import ClientsPageContainer from '/imports/ui/containers/ClientsPageContainer';
 import UpdateClientContainer from '/imports/ui/containers/UpdateClientContainer';
+import ClientStatusContainer from '/imports/ui/containers/ClientStatusContainer';
 import ServerQueryUsersContainer from '/imports/ui/containers/ServerQueryUsersContainer';
 import NewServerQueryUserContainer from '/imports/ui/containers/NewServerQueryUserContainer';
 
@@ -21,6 +22,7 @@ const Routes = routes =>
       <Route path="register" component={AccessPage} />
       <Route path="client/new" component={ClientsPageContainer} container={NewClientContainer} />
       <Route path="clients/:clientId" component={ClientPageContainer} container={UpdateClientContainer} />
+      <Route path="clients/:clientId/server/status" component={ClientPageContainer} container={ClientStatusContainer} />
       <Route path="clients/:clientId/server/query" component={ClientPageContainer} container={ServerQueryUsersContainer} />
       <Route path="clients/:clientId/server/query/new" component={ClientPageContainer} container={NewServerQueryUserContainer} />
    </Route>
