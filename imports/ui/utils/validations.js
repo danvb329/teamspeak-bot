@@ -55,6 +55,10 @@ const RULES_BY_TYPE = {
     serverQueryPort: {
       value: data.serverQueryPort || 10011,
       rules: []
+    },
+    tibiaServerToUse: {
+      value: data.tibiaServerToUse || 10011,
+      rules: []
     }
   }),
 }

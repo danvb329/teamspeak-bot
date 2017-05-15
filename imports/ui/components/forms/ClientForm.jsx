@@ -4,6 +4,7 @@ import SubmitUtils from '/imports/ui/utils/forms';
 import FormLabel from '/imports/ui/components/forms/components/FormLabel';
 import FormInput from '/imports/ui/components/forms/components/FormInput';
 import FormErrors from '/imports/ui/components/forms/components/FormErrors';
+import FormCheckboxRadio from '/imports/ui/components/forms/components/FormCheckboxRadio';
 import FormSubmitControls from '/imports/ui/components/forms/components/FromSubmitControls';
 
 class NewClientForm extends React.Component {
@@ -17,6 +18,7 @@ class NewClientForm extends React.Component {
       hostname: undefined,
       hostnamePort: undefined,
       serverQueryPort: undefined,
+      tibiaServerToUse: undefined,
       serverQueryHostname: undefined,
     };
 
@@ -32,7 +34,7 @@ class NewClientForm extends React.Component {
 
   render() {
     const { errors, client, onSubmit, onCancel, submitText } = this.props;
-    const { change, hostname, hostnamePort, serverQueryHostname, serverQueryPort } = this.state;
+    const { change, hostname, hostnamePort, serverQueryHostname, serverQueryPort, tibiaServerToUse } = this.state;
 
     // Since we are not using any kind of react package for the forms,
     // and we are re-using this form for update - create this control what data
@@ -41,6 +43,7 @@ class NewClientForm extends React.Component {
       hostname,
       hostnamePort,
       serverQueryPort,
+      tibiaServerToUse,
       serverQueryHostname,
     }) : client;
 
@@ -92,6 +95,19 @@ class NewClientForm extends React.Component {
                 className="input"
                 placeholder="ServerQuery PORT (ServerQuery PORT)"
                 onChange={(e) => this.onInputChange(e, 'serverQueryPort')}
+              />
+            </p>
+          </div>
+          <div className="field">
+            <FormLabel text="Apply client to"/>
+            <p className="control">
+              <FormCheckboxRadio
+                type="checkbox"
+                setName="applyTo"
+                className="checkbox"
+                options={['medivia', 'tibiaRL']}
+                selectedOptions={[tibiaServerToUse || client && client.tibiaServerToUse || 'medivia']}
+                onChange={(e) => this.onInputChange(e, 'tibiaServerToUse')}
               />
             </p>
           </div>

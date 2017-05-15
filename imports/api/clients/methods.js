@@ -9,6 +9,7 @@ export const insertClient = new ValidatedMethod({
     hostname: { type: String },
     hostnamePort: { type: null },
     serverQueryPort: { type: null },
+    tibiaServerToUse: { type: String },
     serverQueryHostname: { type: String },
   }).validator(),
   run(client) {
