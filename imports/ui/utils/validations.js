@@ -5,6 +5,16 @@ const basicLength = (lengthMax) => {
 };
 
 const RULES_BY_TYPE = {
+  serverQueryUser: (data) => ({
+    username: {
+      value: data.username,
+      rules: ['basicLength']
+    },
+    password: {
+      value: data.password,
+      rules: ['basicLength']
+    }
+  }),
   registerForm: (data) => ({
     email: {
       value: data.email,
@@ -28,16 +38,36 @@ const RULES_BY_TYPE = {
       value: data.password,
       rules: ['basicLength']
     }
-  })
+  }),
+  clientForm: (data) => ({
+    hostname: {
+      value: data.hostname,
+      rules: ['required'],
+    },
+    hostnamePort: {
+      value: data.hostnamePort,
+      rules: ['numeric']
+    },
+    serverQueryHostname: {
+      value: data.serverQueryHostname || data.hostname,
+      rules: []
+    },
+    serverQueryPort: {
+      value: data.serverQueryPort || 10011,
+      rules: []
+    }
+  }),
 }
 
 const RULES_BY_NAME = {
-  required: ({ value, fieldName }) => {
-    return {
-      error: !value || value && value.length === 0,
-      message: `${fieldName} is required`,
-    };
-  },
+  required: ({ value, fieldName }) => ({
+    error: !value || value && value.length === 0,
+    message: `${fieldName} is required`,
+  }),
+  numeric: ({ value, fieldName }) => ({
+    error: !value || isNaN(value) ,
+    message: `${fieldName} should be a number`,
+  }),
   isEmail: ({ value }) => {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return {

@@ -46,7 +46,7 @@ class Navbar extends React.Component {
           {
             authenticated ?
             <div className="nav-item">
-              <Link className="nav-item" to="clients">
+              <Link className="nav-item" to="/client/new">
                 Clients
               </Link>
               <a className="nav-item" onClick={this.logout}>

@@ -9,6 +9,7 @@ import trackerComposer from '/imports/ui/composers/tracker';
 const requireAuth = [
   'clients',
   '/clients',
+  'client',
 ];
 
 class MasterLayout extends React.Component {
@@ -28,8 +29,10 @@ class MasterLayout extends React.Component {
   }
 
   render() {
-    const { user, location, children, masterChannelData } = this.props;
+    const { user, routes, location, children, masterChannelData } = this.props;
+    const containerChildren = routes[1];
     const childrenWithProps = React.cloneElement(children, {
+      Container: containerChildren && containerChildren.container,
       ...this.props,
     });
 

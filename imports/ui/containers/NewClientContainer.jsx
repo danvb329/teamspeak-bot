@@ -1,7 +1,8 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import validations from '/imports/ui/utils/validations';
-import LoginForm from '/imports/ui/components/forms/LoginForm';
+import { insertClient } from '/imports/api/clients/methods';
+import ClientForm from '/imports/ui/components/forms/ClientForm';
 
 class RegisterContainer extends React.Component {
   constructor(props) {
@@ -12,32 +13,30 @@ class RegisterContainer extends React.Component {
   }
 
   onSubmit(formData) {
-    const dataWithRules = validations.applyRules({ data: formData, type: 'loginForm' });
+    const dataWithRules = validations.applyRules({ data: formData, type: 'clientForm' });
     const formDataEvaluated = validations.validate(dataWithRules);
     this.setState({ errors: formDataEvaluated.errors });
     if (formDataEvaluated.haveErrors) return;
-    Meteor.loginWithPassword(formDataEvaluated.formData.email, formDataEvaluated.formData.password, (error, result) => {
+    insertClient.call(formDataEvaluated.formData, (error, result) => {
       if (error) {
         Bert.alert(error.reason, 'danger', 'fixed-top', 'fa-frown-o');
       } else {
-        Bert.alert('Welcome Back', 'success', 'fixed-top', 'fa-check');
-        browserHistory.push('/clients');
+        Bert.alert(`${formDataEvaluated.formData.hostname} Added!`, 'success', 'fixed-top', 'fa-check');
       }
     });
   }
 
-  onCancel() {
-    browserHistory.push('/');
-  }
+  onCancel() {}
 
   render() {
     const { errors } = this.state;
     return (
-      <div>
-        <LoginForm
+      <div className="new-client-container--wrapper">
+        <ClientForm
           errors={errors}
           onSubmit={this.onSubmit}
           onCancel={this.onCancel}
+          submitText="Create Client"
         />
       </div>
     )

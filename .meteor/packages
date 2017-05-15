@@ -26,3 +26,6 @@ accounts-password
 accounts-base
 fourseven:scss
 themeteorchef:bert
+aldeed:collection2-core@2.0.0
+mdg:validated-method
+aldeed:simple-schema

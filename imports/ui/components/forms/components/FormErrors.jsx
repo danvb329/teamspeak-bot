@@ -15,4 +15,8 @@ class FormErrors extends React.Component {
   }
 };
 
+FormErrors.defaultProps = {
+  errors: [],
+};
+
 export default FormErrors;
