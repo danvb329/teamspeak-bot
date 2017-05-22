@@ -1,5 +1,9 @@
 # Ethan FREE TeamSpeak BOT
 
+## IMPORTANT
+
+The initial code of this repo is dirty and intentional, it was a project i made in hours (and under WAR), the clean version of this project can be founded on the PR https://github.com/Ethaan/teamspeak-bot/pull/1, give it a try and help me building this great tool
+
 ## Disclaimer
 I never did pay for a TS3 bot for Tibia, so i might be loosing a point on what a TS3 bot does, but this one satisfaces our war needs
 
